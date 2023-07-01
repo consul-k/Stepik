@@ -16,7 +16,6 @@ Sample Output:
 
 101
 
-
 */
 
 #include <stdio.h>
