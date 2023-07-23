@@ -131,7 +131,6 @@ class Example(Frame):
         command=self.black_white_click, state='disabled')
         self.filters_menu.add_command(label="Оттенки красного",
         command=self.rnd_red_click, state='disabled')
-        
         self.filters_menu.add_command(label="Оттенки зеленого",
         command=self.rnd_green_click, state='disabled')
         self.filters_menu.add_command(label="Оттенки синего",
@@ -160,9 +159,23 @@ class Example(Frame):
         state="disabled")
         self.btn_clear.place(x=25, y=150)
 
-        self.btn_close = Button(text = 'Очистить', height = 2, width= 12, command=self.close,
-        state="disabled")
-        self.btn_close.place(x=25, y=205)
+        self.btn_exit = Button(text="Выход", height = 2, width = 12, command=self.close)
+        self.btn_exit.place(x = 25, y = 195)
+
+        label_fail_par = Label(root, text = 'Параметры изображения')
+        label_fail_par.place(x = 650, y = 30)
+        
+        self.btn_yar = Button(text="Яркость", height = 2, width = 12,
+        command=self.brightness_click, state='disabled')
+        self.btn_yar.place(x = 675, y = 60)
+        
+        self.btn_contr = Button(text="Контрастность", height = 2, width = 12,
+        command=self.contrast_click, state='disabled')
+        self.btn_contr.place(x = 675, y = 105)
+        
+        self.btn_cvb = Button(text="RGB баланс", height = 2, width = 12,
+        command=self.rgb_balans_click, state='disabled')
+        self.btn_cvb.place(x = 675, y = 150)
         
         self.parent.config(menu=menu)
  
