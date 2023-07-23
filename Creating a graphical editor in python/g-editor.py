@@ -90,6 +90,15 @@ class Example(Frame):
     def random_color_click(self):
         pass
 
+    def increase(self):
+        pass
+
+    def decrease(self):
+        pass
+
+    def turn(self):
+        pass
+
     def create_menu(self):
         menu = Menu(self.parent)
         self.file_menu = Menu(menu)
@@ -176,6 +185,18 @@ class Example(Frame):
         self.btn_cvb = Button(text="RGB баланс", height = 2, width = 12,
         command=self.rgb_balans_click, state='disabled')
         self.btn_cvb.place(x = 675, y = 150)
+
+        self.btn_cvb = Button(text="Увеличить", height = 2, width = 12,
+        command=self.increase, state='disabled')
+        self.btn_cvb.place(x = 675, y = 195)
+
+        self.btn_cvb = Button(text="Уменьшить", height = 2, width = 12,
+        command=self.decrease, state='disabled')
+        self.btn_cvb.place(x = 675, y = 240)
+
+        self.btn_cvb = Button(text="Повернуть", height = 2, width = 12,
+        command=self.turn, state='disabled')
+        self.btn_cvb.place(x = 675, y = 285)
         
         self.parent.config(menu=menu)
  
