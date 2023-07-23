@@ -1,4 +1,4 @@
-from tkinter import Frame, Canvas, Button, Tk, filedialog, Scrollbar, Label, Menu
+from tkinter import Frame, Canvas, Button, Tk, filedialog, Scrollbar, Label, Menu, messagebox
 from PIL import ImageTk, Image
  
 class Example(Frame):
@@ -16,19 +16,31 @@ class Example(Frame):
         
     def open(self):
         self.filename = filedialog.askopenfilename()
-        
-        self.image = Image.open(self.filename)
-        self.photo = ImageTk.PhotoImage(self.image)
-        self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
-        
-        self.scr1 = Scrollbar(root,command=self.display.yview, orient='vertical')
-        self.scr1.place(x = 133, y = 3)
-        
-        self.scr2 = Scrollbar(root,command=self.display.xview, orient="horizontal")
-        self.scr2.place(x = 145, y = 452)
+        if self.filename:
+            self.image = Image.open(self.filename)
+            self.photo = ImageTk.PhotoImage(self.image)
+            self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
+
+            self.file_menu.entryconfig("Сохранить", state='active')
+            self.file_menu.entryconfig("Очистить", state='active')
+            
+            self.scr1 = Scrollbar(root,command=self.display.yview, orient='vertical')
+            self.scr1.place(x = 133, y = 3)
+            
+            self.scr2 = Scrollbar(root,command=self.display.xview, orient="horizontal")
+            self.scr2.place(x = 145, y = 452)
+
+            self.btn_save.config(state="normal")
+            self.btn_clear.config(state="normal")
         
     def save(self):
-        pass
+        path = filedialog.asksaveasfilename()
+        if path:
+            try:
+                self.image.save(path)
+                messagebox.showinfo('Сохранение', 'Успех! Файл сохранен.')
+            except KeyError:
+                messagebox.showerror('Ошибка', 'Не задано расширение')
     
     def clear(self):
         pass
