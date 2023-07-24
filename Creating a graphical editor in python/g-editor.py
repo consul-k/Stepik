@@ -280,7 +280,7 @@ class Example(Frame):
         button_close = Button(root_increase, text="Закрыть", command = close)
         button_close.place(x = 70, y = 62)
 
-    #def decrease(self):
+    def decrease(self):
         #pass
         image = Image.open(self.filename)
         decrease = self.scale_decrease.get()
