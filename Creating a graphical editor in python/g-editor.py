@@ -22,7 +22,8 @@ class Example(Frame):
             self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
 
             self.file_menu.entryconfig("Сохранить", state='active')
-            self.file_menu.entryconfig("Очистить", state='active')
+            self.file_menu.entryconfig("Очистить", state='active') 
+            
             
             self.scr1 = Scrollbar(root,command=self.display.yview, orient='vertical')
             self.scr1.place(x = 133, y = 3)
@@ -32,6 +33,7 @@ class Example(Frame):
 
             self.btn_save.config(state="normal")
             self.btn_clear.config(state="normal")
+            
         
     def save(self):
         path = filedialog.asksaveasfilename()
@@ -46,7 +48,10 @@ class Example(Frame):
         pass
 
     def close(self):
-        pass
+        if messagebox.askyesno('Выход', 'Вы уверены?'):
+            self.parent.destroy()
+        else:
+            messagebox.showinfo('Отмена','Выход отменен')
 
     def brightness_click(self):
         pass
