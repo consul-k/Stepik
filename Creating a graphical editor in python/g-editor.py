@@ -26,7 +26,12 @@ class Example(Frame):
 
             self.parametr_menu.entryconfig("Яркость", state='active')
             self.parametr_menu.entryconfig("Контрастность", state='active')
-            self.parametr_menu.entryconfig("Цветовой баланс", state='active') 
+            self.parametr_menu.entryconfig("Цветовой баланс", state='active')
+
+            self.parametr_menu.entryconfig("Увеличить", state='active')
+            self.parametr_menu.entryconfig("Уменьшить", state='active')
+            self.parametr_menu.entryconfig("Повернуть", state='active')
+
             
             self.scr1 = Scrollbar(root,command=self.display.yview, orient='vertical')
             self.scr1.place(x = 133, y = 3)
@@ -40,8 +45,11 @@ class Example(Frame):
             self.btn_yar.config(state="normal")
             self.btn_contr.config(state="normal")
             self.btn_cvb.config(state="normal")
-            
-        
+
+            self.btn_inc.config(state="normal")
+            self.btn_dec.config(state="normal")
+            self.btn_rotate.config(state="normal")
+
     def save(self):
         path = filedialog.asksaveasfilename()
         if path:
@@ -213,15 +221,6 @@ class Example(Frame):
         button_close = Button(root_rgb_balans, text="Закрыть", command = close)
         button_close.place(x = 100, y = 190)
 
-
-    def choice_big(self):
-        pass
-
-    def choice_small(self):
-        pass
-    
-    def choice_rotation(self):
-        pass
     
     def negativ_clic(self):
         pass
@@ -262,11 +261,77 @@ class Example(Frame):
     def increase(self):
         pass
 
-    def decrease(self):
-        pass
+    def increase_click(self):
+        root_increase = Tk()
+        root_increase.geometry('%dx%d+%d+%d' % (150, 100, 400, 400))
+        label_increase = Label(root_increase, text = 'Выберите значение увеличения в %')
+        label_increase.pack(anchor=CENTER)
+        
+        self.scale_increase = Scale(root_increase, from_= 200, to = 500, orient="horizontal")
+        self.scale_increase.pack(anchor=CENTER)   
+        def set_increase():
+            self.increase()
+        def close():
+            root_increase.destroy()
+        
+        button_rnd = Button(root_increase, text="Ок", command = set_increase)
+        button_rnd.place(x = 25, y = 62)
+    
+        button_close = Button(root_increase, text="Закрыть", command = close)
+        button_close.place(x = 70, y = 62)
+
+    #def decrease(self):
+        #pass
+        image = Image.open(self.filename)
+        decrease = self.scale_decrease.get()
+        image = image.resize((decrease, decrease), Image.LANCZOS)
+
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
+        del image
+
+
+    def decrease_click(self):
+        root_decrease = Tk()
+        root_decrease.geometry('%dx%d+%d+%d' % (150, 100, 400, 400))
+        label_decrease = Label(root_decrease, text = 'Выберите значение уменьшения в %')
+        label_decrease.pack(anchor=CENTER)
+        
+        self.scale_decrease = Scale(root_decrease, from_= 200, to = 500, orient="horizontal")
+        self.scale_decrease.pack(anchor=CENTER)   
+        def set_decrease():
+            self.decrease()
+        def close():
+            root_decrease.destroy()
+        
+        button_rnd = Button(root_decrease, text="Ок", command = set_decrease)
+        button_rnd.place(x = 25, y = 62)
+    
+        button_close = Button(root_decrease, text="Закрыть", command = close)
+        button_close.place(x = 70, y = 62)
 
     def turn(self):
         pass
+
+    def turn_click(self):
+        root_turn = Tk()
+        root_turn.geometry('%dx%d+%d+%d' % (150, 100, 400, 400))
+        label_turn = Label(root_turn, text = 'Выберите значение поворота изображения в градусах')
+        label_turn.pack(anchor=CENTER)
+        
+        self.scale_turn = Scale(root_turn, from_= 0, to = 360, orient="horizontal")
+        self.scale_turn.pack(anchor=CENTER)   
+        def set_turn():
+            self.turn()
+        def close():
+            root_turn.destroy()
+        
+        button_rnd = Button(root_turn, text="Ок", command = set_turn)
+        button_rnd.place(x = 25, y = 62)
+    
+        button_close = Button(root_turn, text="Закрыть", command = close)
+        button_close.place(x = 70, y = 62)
+
 
     def create_menu(self):
         menu = Menu(self.parent)
@@ -290,11 +355,11 @@ class Example(Frame):
         command=self.contrast_click, state='disabled')
         self.parametr_menu.add_command(label="Цветовой баланс",
         command=self.rgb_balans_click, state='disabled')
-        self.parametr_menu.add_command(label="Увеличить", command=self.choice_big,
+        self.parametr_menu.add_command(label="Увеличить", command=self.increase_click,
         state='disabled')
-        self.parametr_menu.add_command(label="Уменьшить", command=self.choice_small,
+        self.parametr_menu.add_command(label="Уменьшить", command=self.decrease_click,
         state='disabled')
-        self.parametr_menu.add_command(label="Повернуть", command=self.choice_rotation,
+        self.parametr_menu.add_command(label="Повернуть", command=self.turn_click,
         state='disabled')
         
         self.filters_menu.add_command(label="Негатив", command=self.negativ_clic,
@@ -322,7 +387,6 @@ class Example(Frame):
         self.filters_menu.add_command(label="Случайные цвета",
         command=self.random_color_click, state='disabled')   
         
-
         label_fail = Label(root, text = 'Параметры файла')
         label_fail.place(x = 22, y = 30)
         
@@ -355,17 +419,17 @@ class Example(Frame):
         command=self.rgb_balans_click, state='disabled')
         self.btn_cvb.place(x = 675, y = 150)
 
-        self.btn_cvb = Button(text="Увеличить", height = 2, width = 12,
-        command=self.increase, state='disabled')
-        self.btn_cvb.place(x = 675, y = 195)
+        self.btn_inc = Button(text="Увеличить", height = 2, width = 12,
+        command=self.increase_click, state='disabled')
+        self.btn_inc.place(x = 675, y = 195)
 
-        self.btn_cvb = Button(text="Уменьшить", height = 2, width = 12,
-        command=self.decrease, state='disabled')
-        self.btn_cvb.place(x = 675, y = 240)
+        self.btn_dec = Button(text="Уменьшить", height = 2, width = 12,
+        command=self.decrease_click, state='disabled')
+        self.btn_dec.place(x = 675, y = 240)
 
-        self.btn_cvb = Button(text="Повернуть", height = 2, width = 12,
-        command=self.turn, state='disabled')
-        self.btn_cvb.place(x = 675, y = 285)
+        self.btn_rotate = Button(text="Повернуть", height = 2, width = 12,
+        command=self.turn_click, state='disabled')
+        self.btn_rotate.place(x = 675, y = 285)
         
         self.parent.config(menu=menu)
  
