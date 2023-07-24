@@ -1,5 +1,5 @@
-from tkinter import Frame, Canvas, Button, Tk, filedialog, Scrollbar, Label, Menu, messagebox
-from PIL import ImageTk, Image
+from tkinter import Frame, Canvas, Button, Tk, filedialog, Scrollbar, Label, Menu, messagebox, Scale, CENTER
+from PIL import ImageTk, Image, ImageDraw
  
 class Example(Frame):
     def __init__(self, parent):
@@ -22,8 +22,11 @@ class Example(Frame):
             self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
 
             self.file_menu.entryconfig("Сохранить", state='active')
-            self.file_menu.entryconfig("Очистить", state='active') 
-            
+            self.file_menu.entryconfig("Очистить", state='active')
+
+            self.parametr_menu.entryconfig("Яркость", state='active')
+            self.parametr_menu.entryconfig("Контрастность", state='active')
+            self.parametr_menu.entryconfig("Цветовой баланс", state='active') 
             
             self.scr1 = Scrollbar(root,command=self.display.yview, orient='vertical')
             self.scr1.place(x = 133, y = 3)
@@ -33,6 +36,10 @@ class Example(Frame):
 
             self.btn_save.config(state="normal")
             self.btn_clear.config(state="normal")
+
+            self.btn_yar.config(state="normal")
+            self.btn_contr.config(state="normal")
+            self.btn_cvb.config(state="normal")
             
         
     def save(self):
@@ -45,7 +52,9 @@ class Example(Frame):
                 messagebox.showerror('Ошибка', 'Не задано расширение')
     
     def clear(self):
-        pass
+        self.image = Image.open(self.filename)
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
 
     def close(self):
         if messagebox.askyesno('Выход', 'Вы уверены?'):
@@ -53,14 +62,157 @@ class Example(Frame):
         else:
             messagebox.showinfo('Отмена','Выход отменен')
 
+    def brightness(self):
+        draw = ImageDraw.Draw(self.image)
+        width = self.image.size[0]
+        height = self.image.size[1]
+        pix = self.image.load()
+        factor = self.scale.get()
+        for i in range(width):
+            for j in range(height):
+                a = pix[i, j][0] + factor
+                b = pix[i, j][1] + factor
+                c = pix[i, j][2] + factor
+                if (a < 0):
+                    a = 0
+                if (b < 0):
+                    b = 0
+                if (c < 0):
+                    c = 0
+                if (a > 255):
+                    a = 255
+                if (b > 255):
+                    b = 255
+                if (c > 255):
+                    c = 255
+                draw.point((i, j), (a, b, c))
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
+        del draw
+
     def brightness_click(self):
-        pass
+        root = Tk()
+        root.geometry('%dx%d+%d+%d' % (150, 100, 400, 400))
+        label = Label(root, text = 'Выберете значение яркости')
+        label.pack(anchor=CENTER)
+        
+        self.scale = Scale(root, from_= -100, to = 100, orient="horizontal")
+        self.scale.pack(anchor=CENTER)   
+        def reset_brightness():
+            self.brightness()
+        def close():
+            root.destroy()
+        
+        button_rnd = Button(root, text="Ок", command = reset_brightness)
+        button_rnd.place(x = 25, y = 62)
+    
+        button_close = Button(root, text="Закрыть", command = close)
+        button_close.place(x = 70, y = 62)
+
+    def contrast(self):
+        draw = ImageDraw.Draw(self.image)
+        width = self.image.size[0]
+        height = self.image.size[1]
+        pix = self.image.load()
+        factor = self.scale_contrast.get()
+        contrast1 = (259*(factor + 255))/(255*(259-factor))
+        for i in range(width):
+            for j in range(height):
+                a = pix[i, j][0]
+                b = pix[i, j][1]
+                c = pix[i, j][2]
+                a = round(contrast1*(a - 128) + 128)
+                b = round(contrast1*(b - 128) + 128)
+                c = round(contrast1*(c - 128) + 128)
+                if (a < 0):
+                    a = 0
+                if (b < 0):
+                    b = 0
+                if (c < 0):
+                    c = 0
+                if (a > 255):
+                    a = 255
+                if (b > 255):
+                    b = 255
+                if (c > 255):
+                    c = 255
+                draw.point((i, j), (a, b, c))
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
+        del draw
 
     def contrast_click(self):
-        pass
+        root_contrast = Tk()
+        root_contrast.geometry('%dx%d+%d+%d' % (150, 100, 400, 400))
+        label_contrast = Label(root_contrast, text = 'Выберете значение контрастности')
+        label_contrast.pack(anchor=CENTER)
+        self.scale_contrast = Scale(root_contrast, from_= -100, to = 100, orient="horizontal")
+        self.scale_contrast.pack(anchor=CENTER)
+        def reset_contrast():
+            self.contrast()
+        def close():
+            root_contrast.destroy()
+
+        button_rnd = Button(root_contrast, text="Ок", command = reset_contrast)
+        button_rnd.place(x = 25, y = 62)
+        button_close = Button(root_contrast, text="Закрыть", command = close)
+        button_close.place(x = 70, y = 62)
+
+    def rgb_balans(self):
+        draw = ImageDraw.Draw(self.image)
+        width = self.image.size[0]
+        height = self.image.size[1]
+        pix = self.image.load()
+        for i in range(width):
+            for j in range(height):
+                a = pix[i, j][0] + self.scale_r.get()
+                b = pix[i, j][1] + self.scale_g.get()
+                c = pix[i, j][2] + self.scale_b.get()
+                if (a < 0):
+                    a = 0
+                if (b < 0):
+                    b = 0
+                if (c < 0):
+                    c = 0
+                if (a > 255):
+                    a = 255
+                if (b > 255):
+                    b = 255
+                if (c > 255):
+                    c = 255
+                draw.point((i, j), (a, b, c))
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
+        del draw
 
     def rgb_balans_click(self):
-        pass
+        root_rgb_balans = Tk()
+        root_rgb_balans.geometry('%dx%d+%d+%d' % (200, 225, 400, 400))
+
+        label_r = Label(root_rgb_balans, text = 'Выберете значение крсаного')
+        label_r.pack(anchor=CENTER)
+        self.scale_r = Scale(root_rgb_balans, from_= -256, to = 256, orient="horizontal")
+        self.scale_r.pack(anchor=CENTER)
+        
+        label_g = Label(root_rgb_balans, text = 'Выберете значение зеленого')
+        label_g.pack(anchor=CENTER)
+        self.scale_g = Scale(root_rgb_balans, from_= -256, to = 256, orient="horizontal")
+        self.scale_g.pack(anchor=CENTER)
+        
+        label_b = Label(root_rgb_balans, text = 'Выберете значение синего')
+        label_b.pack(anchor=CENTER)
+        self.scale_b = Scale(root_rgb_balans, from_= -256, to = 256, orient="horizontal")
+        self.scale_b.pack(anchor=CENTER)
+        def reset_rgb_balans():
+            self.rgb_balans()
+        def close():
+            root_rgb_balans.destroy()
+
+        button_rnd = Button(root_rgb_balans, text="Ок", command = reset_rgb_balans)
+        button_rnd.place(x = 45, y = 190)
+        button_close = Button(root_rgb_balans, text="Закрыть", command = close)
+        button_close.place(x = 100, y = 190)
+
 
     def choice_big(self):
         pass
