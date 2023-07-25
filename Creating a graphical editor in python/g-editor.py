@@ -281,14 +281,16 @@ class Example(Frame):
         button_close.place(x = 70, y = 62)
 
     def decrease(self):
-        #pass
         image = Image.open(self.filename)
+        oldWidth, oldHeight = self.image.size
         decrease = self.scale_decrease.get()
-        image = image.resize((decrease, decrease), Image.LANCZOS)
 
-        self.photo = ImageTk.PhotoImage(self.image)
+        _w, _h = int(oldWidth / (decrease/100)), int(oldHeight / (decrease/100))
+
+        image = self.image.resize((_w, _h), Image.LANCZOS)
+        
+        self.photo = ImageTk.PhotoImage(image)
         self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
-        del image
 
 
     def decrease_click(self):
