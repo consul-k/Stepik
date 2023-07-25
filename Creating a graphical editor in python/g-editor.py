@@ -1,5 +1,7 @@
 from tkinter import Frame, Canvas, Button, Tk, filedialog, Scrollbar, Label, Menu, messagebox, Scale, CENTER
-from PIL import ImageTk, Image, ImageDraw
+from PIL import ImageTk, Image, ImageDraw, ImageFilter
+import random
+import math
  
 class Example(Frame):
     def __init__(self, parent):
@@ -27,6 +29,13 @@ class Example(Frame):
             self.parametr_menu.entryconfig("Яркость", state='active')
             self.parametr_menu.entryconfig("Контрастность", state='active')
             self.parametr_menu.entryconfig("Цветовой баланс", state='active')
+
+            self.filters_menu.entryconfig("Негатив", state='active')
+            self.filters_menu.entryconfig("Шум", state='active')
+            self.filters_menu.entryconfig("Оттенки серого", state='active')
+            self.filters_menu.entryconfig("Сепия", state='active')
+            self.filters_menu.entryconfig("Черно-белый", state='active')
+            self.filters_menu.entryconfig("Оттенки красного", state='active')
 
             self.parametr_menu.entryconfig("Увеличить", state='active')
             self.parametr_menu.entryconfig("Уменьшить", state='active')
@@ -223,22 +232,150 @@ class Example(Frame):
 
     
     def negativ_clic(self):
-        pass
+        draw = ImageDraw.Draw(self.image)
+        width = self.image.size[0]
+        height = self.image.size[1]
+        pix = self.image.load()
+        for i in range(width):
+            for j in range(height):
+                a = pix[i, j][0]
+                b = pix[i, j][1]
+                c = pix[i, j][2]
+                draw.point((i, j), (255 - a, 255 - b, 255 - c))
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
+        del draw
+
+    def rnd_noise(self):
+        draw = ImageDraw.Draw(self.image)
+        width = self.image.size[0]
+        height = self.image.size[1]
+        pix = self.image.load()
+        factor = self.scale_rnd.get()
+        for i in range(width):
+            for j in range(height):
+                rand = random.randint(-factor, factor)
+                a = pix[i, j][0] + rand
+                b = pix[i, j][1] + rand
+                c = pix[i, j][2] + rand
+                if (a < 0):
+                    a = 0
+                if (b < 0):
+                    b = 0
+                if (c < 0):
+                    c = 0
+                if (a > 255):
+                    a = 255
+                if (b > 255):
+                    b = 255
+                if (c > 255):
+                    c = 255
+                draw.point((i, j), (a, b, c))
+        
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
+        del draw
 
     def rnd_noise_click(self):
-        pass
+        root = Tk()
+        root.geometry('%dx%d+%d+%d' % (150, 100, 400, 400))
+        
+        label_rnd = Label(root, text = 'Выберете значение шума')
+        label_rnd.pack(anchor=CENTER)
+        
+        self.scale_rnd = Scale(root, from_= 0, to = 100, orient="horizontal")
+        self.scale_rnd.pack(anchor=CENTER)
+        def reset_rnd():
+            self.rnd_noise()
+        def close():
+            root.destroy()
+        
+        button_rnd = Button(root, text="Ок", command = reset_rnd)
+        button_rnd.place(x = 25, y = 62)
+        button_close = Button(root, text="Закрыть", command = close)
+        button_close.place(x = 70, y = 62)
 
     def gray_click(self):
-        pass
+        draw = ImageDraw.Draw(self.image)
+        width = self.image.size[0]
+        height = self.image.size[1]
+        pix = self.image.load()
+        for i in range(width):
+            for j in range(height):
+                a = pix[i, j][0]
+                b = pix[i, j][1]
+                c = pix[i, j][2]
+                S = (a + b + c) // 3
+                draw.point((i, j), (S, S, S))
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
+        del draw
 
     def sepia_click(self):
-        pass
+        depth = 30
+        draw = ImageDraw.Draw(self.image)
+        width = self.image.size[0]
+        height = self.image.size[1]
+        pix = self.image.load()
+        for i in range(width):
+            for j in range(height):
+                a = pix[i, j][0]
+                b = pix[i, j][1]
+                c = pix[i, j][2]
+                S = (a + b + c) // 3
+                a = S + depth * 2
+                b = S + depth
+                c = S
+                if (a > 255):
+                    a = 255
+                if (b > 255):
+                    b = 255
+                if (c > 255):
+                    c = 255
+                draw.point((i, j), (a, b, c))
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
+        del draw
 
     def black_white_click(self):
-        pass
+        draw = ImageDraw.Draw(self.image)
+        width = self.image.size[0]
+        height = self.image.size[1]
+        pix = self.image.load()
+        for i in range(width):
+            for j in range(height):
+                a = pix[i, j][0]
+                b = pix[i, j][1]
+                c = pix[i, j][2]
+                S = a + b + c
+                if (S > (((255) // 2) * 3)):
+                    a, b, c = 255, 255, 255  
+                else:
+                    a, b, c = 0, 0, 0
+                draw.point((i, j), (a, b, c))
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
+        del draw
 
     def rnd_red_click(self):
-        pass
+        draw = ImageDraw.Draw(self.image)
+        width = self.image.size[0]
+        height = self.image.size[1]
+        pix = self.image.load()
+        for i in range(width):
+            for j in range(height):
+                a = pix[i, j][0]
+                b = pix[i, j][1]
+                c = pix[i, j][2]
+                Red = (255 - (255 - a))
+                if b > 10:
+                    b = b // 100
+                if c > 10:
+                    c = c // 100             
+                draw.point((i, j), (Red, b, c))
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
+        del draw
 
     def rnd_green_click(self):
         pass
