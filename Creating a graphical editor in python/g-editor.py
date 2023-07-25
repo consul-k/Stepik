@@ -37,6 +37,8 @@ class Example(Frame):
             self.filters_menu.entryconfig("Черно-белый", state='active')
             self.filters_menu.entryconfig("Оттенки красного", state='active')
 
+            self.filters_menu.entryconfig("Оттенки зеленого", state='active')
+
             self.parametr_menu.entryconfig("Увеличить", state='active')
             self.parametr_menu.entryconfig("Уменьшить", state='active')
             self.parametr_menu.entryconfig("Повернуть", state='active')
@@ -378,7 +380,24 @@ class Example(Frame):
         del draw
 
     def rnd_green_click(self):
-        pass
+        draw = ImageDraw.Draw(self.image)
+        width = self.image.size[0]
+        height = self.image.size[1]
+        pix = self.image.load()
+        for i in range(width):
+            for j in range(height):
+                a = pix[i, j][0]
+                b = pix[i, j][1]
+                c = pix[i, j][2]
+                Green = (128 - (128 - b))
+                if a > 10:
+                    a = a // 100
+                if c > 10:
+                    c = c // 100             
+                draw.point((i, j), (a, Green, c))
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
+        del draw
 
     def rnd_blue_click(self):
         pass
