@@ -259,7 +259,16 @@ class Example(Frame):
         pass
 
     def increase(self):
-        pass
+        image = Image.open(self.filename)
+        oldWidth, oldHeight = self.image.size
+        increase = self.scale_increase.get()
+
+        _w, _h = int(oldWidth * (increase/100)), int(oldHeight * (increase/100))
+
+        image = self.image.resize((_w, _h), Image.LANCZOS)
+        
+        self.photo = ImageTk.PhotoImage(image)
+        self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
 
     def increase_click(self):
         root_increase = Tk()
