@@ -322,7 +322,13 @@ class Example(Frame):
         button_close.place(x = 70, y = 62)
 
     def turn(self):
-        pass
+        image = Image.open(self.filename)
+        turn = self.scale_turn.get()
+
+        image = self.image.rotate(turn)
+        
+        self.photo = ImageTk.PhotoImage(image)
+        self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
 
     def turn_click(self):
         root_turn = Tk()
