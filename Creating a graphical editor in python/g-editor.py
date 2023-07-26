@@ -39,6 +39,9 @@ class Example(Frame):
 
             self.filters_menu.entryconfig("Оттенки зеленого", state='active')
             self.filters_menu.entryconfig("Оттенки синего", state='active')
+            self.filters_menu.entryconfig("Оттенки бирюзового", state='active')
+            self.filters_menu.entryconfig("Оттенки фиолетового", state='active')
+            self.filters_menu.entryconfig("Оттенки лилового", state='active')
 
             self.parametr_menu.entryconfig("Увеличить", state='active')
             self.parametr_menu.entryconfig("Уменьшить", state='active')
@@ -414,20 +417,74 @@ class Example(Frame):
                 if a > 10:
                     a = a // 100
                 if b > 10:
-                    b = c // 100             
+                    b = b // 100             
                 draw.point((i, j), (a, b, Blue))
         self.photo = ImageTk.PhotoImage(self.image)
         self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
         del draw
 
     def rnd_biruza_click(self):
-        pass
+        draw = ImageDraw.Draw(self.image)
+        width = self.image.size[0]
+        height = self.image.size[1]
+        pix = self.image.load()
+        for i in range(width):
+            for j in range(height):
+                a = pix[i, j][0]
+                b = pix[i, j][1]
+                c = pix[i, j][2]
+                if a > 48:
+                    a = a // 100
+                if b > 213:
+                    b = b // 100
+                if c > 200:
+                    c = c // 100             
+                draw.point((i, j), (a, b, c))
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
+        del draw
 
     def rnd_fiol_click(self):
-        pass
+        draw = ImageDraw.Draw(self.image)
+        width = self.image.size[0]
+        height = self.image.size[1]
+        pix = self.image.load()
+        for i in range(width):
+            for j in range(height):
+                a = pix[i, j][0]
+                b = pix[i, j][1]
+                c = pix[i, j][2]
+                if a > 139:
+                    a = a // 100
+                if b > 10:
+                    b = b // 100
+                if c > 255:
+                    c = c // 100             
+                draw.point((i, j), (a, b, c))
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
+        del draw
 
     def rnd_lilov_click(self):
-        pass
+        draw = ImageDraw.Draw(self.image)
+        width = self.image.size[0]
+        height = self.image.size[1]
+        pix = self.image.load()
+        for i in range(width):
+            for j in range(height):
+                a = pix[i, j][0]
+                b = pix[i, j][1]
+                c = pix[i, j][2]
+                if a > 219:
+                    a = a // 100
+                if b > 112:
+                    b = b // 100
+                if c > 147:
+                    c = c // 100             
+                draw.point((i, j), (a, b, c))
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
+        del draw
 
     def random_color_click(self):
         pass
