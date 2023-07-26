@@ -438,7 +438,7 @@ class Example(Frame):
                 if b > 213:
                     b = 213
                 if c > 200:
-                    c = 200            
+                    c = 200             
                 draw.point((i, j), (a, b, c))
         self.photo = ImageTk.PhotoImage(self.image)
         self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
@@ -476,7 +476,7 @@ class Example(Frame):
                 b = pix[i, j][1]
                 c = pix[i, j][2]
                 if a > 219:
-                    a = a // 100
+                    a = a // 100    
                 if b > 112:
                     b = b // 100
                 if c > 147:
