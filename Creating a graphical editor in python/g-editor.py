@@ -42,6 +42,7 @@ class Example(Frame):
             self.filters_menu.entryconfig("Оттенки бирюзового", state='active')
             self.filters_menu.entryconfig("Оттенки фиолетового", state='active')
             self.filters_menu.entryconfig("Оттенки лилового", state='active')
+            self.filters_menu.entryconfig("Случайные цвета", state='active')
 
             self.parametr_menu.entryconfig("Увеличить", state='active')
             self.parametr_menu.entryconfig("Уменьшить", state='active')
@@ -487,7 +488,28 @@ class Example(Frame):
         del draw
 
     def random_color_click(self):
-        pass
+        draw = ImageDraw.Draw(self.image)
+        width = self.image.size[0]
+        height = self.image.size[1]
+        pix = self.image.load()
+        a_new = random.randrange(1,255,60)
+        b_new = random.randrange(1,255,60)
+        c_new = random.randrange(1,255,60)
+        for i in range(width):
+            for j in range(height):
+                a = pix[i, j][0]
+                b = pix[i, j][1]
+                c = pix[i, j][2]
+                if a > a_new:
+                    a = a_new
+                if b > b_new:
+                    b = b_new
+                if c > c_new:
+                    c = c_new
+                draw.point((i, j), (a, b, c))
+        self.photo = ImageTk.PhotoImage(self.image)
+        self.display.itemconfigure(self.display_img, image=self.photo, anchor="nw")
+        del draw
 
     def increase(self):
         image = Image.open(self.filename)
