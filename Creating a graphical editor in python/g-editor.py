@@ -69,6 +69,7 @@ class Example(Frame):
         filename = filedialog.asksaveasfilename()
         if filename:
             try:
+                self.photo = self.image
                 self.image.save(filename)
                 messagebox.showinfo('Сохранение', 'Успех! Файл сохранен.')
             except KeyError:
