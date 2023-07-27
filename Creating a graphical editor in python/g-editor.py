@@ -66,10 +66,10 @@ class Example(Frame):
             self.btn_rotate.config(state="normal")
 
     def save(self):
-        path = filedialog.asksaveasfilename()
-        if path:
+        filename = filedialog.asksaveasfilename()
+        if filename:
             try:
-                self.image.save(path)
+                self.image.save(filename)
                 messagebox.showinfo('Сохранение', 'Успех! Файл сохранен.')
             except KeyError:
                 messagebox.showerror('Ошибка', 'Не задано расширение')
