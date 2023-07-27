@@ -1,7 +1,6 @@
 from tkinter import Frame, Canvas, Button, Tk, filedialog, Scrollbar, Label, Menu, messagebox, Scale, CENTER
-from PIL import ImageTk, Image, ImageDraw, ImageFilter
+from PIL import ImageTk, Image, ImageDraw
 import random
-import math
  
 class Example(Frame):
     def __init__(self, parent):
