@@ -36,4 +36,3 @@ with open('lines.txt', 'r', encoding='utf-8') as file:
     for line in s:
         if len(line) == max_l:
             print(line)
-    file.close()
