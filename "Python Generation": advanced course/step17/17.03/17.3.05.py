@@ -38,4 +38,3 @@ with open('nums.txt', 'r', encoding='utf-8') as file:
         numbers = [int(i) for i in s.split()]
         total+= sum(numbers)
     print(total)
-    file.close()
