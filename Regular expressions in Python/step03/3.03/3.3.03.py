@@ -91,3 +91,10 @@ Sample Output 6:
 9KAOG-UTB4I-6JAE3-75BR2-IB27P
 
 '''
+
+import re
+
+for _ in range(5):
+    result = re.search(r'(?<=Activation key: )[A-Z0-9]{5}-[A-Z0-9]{5}-[A-Z0-9]{5}-[A-Z0-9]{5}-[A-Z0-9]{5}', input())
+    if result:
+        print(result.group())
