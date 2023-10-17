@@ -6,3 +6,4 @@
 * [Создание графического редактора на python](https://stepik.org/course/71443/syllabus)
 * ["Поколение Python": курс для продвинутых](https://stepik.org/course/68343/syllabus)
 * [Регулярные выражения в Python](https://stepik.org/course/107335/syllabus)
+* [Python для решения практических задач](https://stepik.org/course/4519/syllabus)
