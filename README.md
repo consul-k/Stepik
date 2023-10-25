@@ -7,3 +7,4 @@
 * ["Поколение Python": курс для продвинутых](https://stepik.org/course/68343/syllabus)
 * [Регулярные выражения в Python](https://stepik.org/course/107335/syllabus)
 * [Python для решения практических задач](https://stepik.org/course/4519/syllabus)
+* [Python-разработчик](https://stepik.org/course/122813/syllabus)
