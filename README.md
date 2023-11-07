@@ -8,3 +8,4 @@
 * [Регулярные выражения в Python](https://stepik.org/course/107335/syllabus)
 * [Python для решения практических задач](https://stepik.org/course/4519/syllabus)
 * [Python-разработчик](https://stepik.org/course/122813/syllabus)
+* [Инди-курс программирования на Python](https://stepik.org/course/63085/syllabus)
