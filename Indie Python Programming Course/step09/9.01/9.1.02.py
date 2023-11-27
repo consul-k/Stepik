@@ -27,3 +27,4 @@ def file_n_lines(file_name: str, n: int) -> None:
     x = open(file_name)
     for _ in range(n):
         print(x.readline(),end='')
+    x.close()
