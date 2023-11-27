@@ -9,3 +9,4 @@
 def file_read(file_name: str) -> None:
     my_file = open(file_name)
     print(my_file.read())
+    my_file.close()
