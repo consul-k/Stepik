@@ -10,3 +10,4 @@
 * [Python-разработчик](https://stepik.org/course/122813/syllabus)
 * [Инди-курс программирования на Python](https://stepik.org/course/63085/syllabus)
 * [Осознанный Python - ООП](https://stepik.org/course/182023/syllabus)
+* [Добрый, добрый Python](https://stepik.org/course/100707/syllabus)
