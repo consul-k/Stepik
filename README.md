@@ -11,3 +11,4 @@
 * [Инди-курс программирования на Python](https://stepik.org/course/63085/syllabus)
 * [Осознанный Python - ООП](https://stepik.org/course/182023/syllabus)
 * [Добрый, добрый Python](https://stepik.org/course/100707/syllabus)
+* [Python в примерах и задачах](https://stepik.org/course/58638/syllabus)
