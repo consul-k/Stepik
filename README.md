@@ -14,3 +14,4 @@
 * [Python в примерах и задачах](https://stepik.org/course/58638/syllabus)
 * [Адаптивный тренажер Python](https://stepik.org/course/431/syllabus)
 * [Погружение в JavaScript: для начинающих](https://stepik.org/course/180784/syllabus)
+* [JavaScript для начинающих](https://stepik.org/course/2223/syllabus)
