@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.logo {
+    color: #3366cc; /* Цвет текста */
+    font-family: 'Arial', sans-serif; /* Шрифт текста */
+    background-image: url('logo-background.jpg'); /* Фоновое изображение */
+    background-size: cover;
+    padding: 20px;
+    border: 2px solid #3366cc; /* Обводка текста */
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0 0 10px rgba(51, 102, 204, 0.5); /* Тень */
+    text-align:center;
+    font-size: 3em;
+}
