@@ -1,0 +1,17 @@
+<!--
+
+Напишите структуру и стили html документа
+
+-->
+
+<form>
+    <label for="email">Почта:</label>
+    <label for="email">Почта:
+        <input type="email" id="email">
+    </label>
+    <br><br>
+    <label for="pass">Пароль:</label>
+    <input type="password" id="pass">
+    <br><br>
+    <input type="submit" value="Отправить">
+</form>
