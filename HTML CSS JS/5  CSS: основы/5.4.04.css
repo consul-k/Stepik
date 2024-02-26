@@ -1,0 +1,6 @@
+.logo {
+    font-family: 'Arial', sans-serif;
+    font-size: 36px;
+    animation: changeColor 5s linear infinite;
+    color: #3498db;
+    }
