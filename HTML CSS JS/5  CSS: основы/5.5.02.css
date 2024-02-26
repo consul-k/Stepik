@@ -1,0 +1,18 @@
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.letter {
+    font-size: 30px;
+    transition: font 0.3s ease, transform 0.3s ease;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.letter:hover {
+    font-family: 'Добавьте шрифт ARIAL', sans-serif; 
+    transform: scale(1.5); 
+}
