@@ -1,0 +1,12 @@
+.gradient-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    }
+
+.gradient-button {
+    background: linear-gradient(to bottom, #ff6b6b, #ffa07a);
+    color: #333;
+}
