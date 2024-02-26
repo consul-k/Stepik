@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.banner {
+    font-size: 2em;
+    text-align:center;
+}
+
+h1 {
+    display: inline;
+    animation: colorChange 4s linear infinite, blink 2s linear infinite;
+}
+
+@keyframes colorChange {
+    0%, 100% {
+        color: red;
+    }
+    25% {
+        color: green;
+    }
+    50% {
+        color: blue;
+    }
+    75% {
+        color: orange;
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+}
