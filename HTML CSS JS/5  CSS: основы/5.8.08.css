@@ -1,0 +1,9 @@
+*{
+    color:red;
+}
+p>em{
+    color:orange;
+}
+br+em:last-of-type{
+    color:blue;
+}
