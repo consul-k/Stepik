@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+}
+body {
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+    margin:0;
+    padding: 0;
+}
+.profile-container {
+    align-items: center;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    max-width:600px;}
+.profile-container {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+company-logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+.company-info {
+    flex: 1;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.edit-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.edit-button:hover {
+    background-color: #0056b3;
+}
