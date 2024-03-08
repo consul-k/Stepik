@@ -17,3 +17,4 @@
 * [JavaScript для начинающих](https://stepik.org/course/2223/syllabus)
 * [HTML CSS JS](https://stepik.org/course/135466/syllabus)
 * [JavaScript. A3 Задачи](https://stepik.org/course/103167/syllabus)
+* [Основы Python](https://stepik.org/course/101652/syllabus)
