@@ -1,0 +1,3 @@
+SELECT MIN(event_date) AS first_date
+FROM game_events
+WHERE user_id = '13d17d67'
