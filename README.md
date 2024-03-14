@@ -19,3 +19,4 @@
 * [JavaScript. A3 Задачи](https://stepik.org/course/103167/syllabus)
 * [Основы Python](https://stepik.org/course/101652/syllabus)
 * [Марафон данных: первое знакомство с SQL и Python](https://stepik.org/course/105359/syllabus)
+* [Основы программирования на Python](https://stepik.org/course/181075/syllabus)
