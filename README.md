@@ -20,3 +20,4 @@
 * [Основы Python](https://stepik.org/course/101652/syllabus)
 * [Марафон данных: первое знакомство с SQL и Python](https://stepik.org/course/105359/syllabus)
 * [Основы программирования на Python](https://stepik.org/course/181075/syllabus)
+* [Кодируй и Учись: Python](https://stepik.org/course/176612/syllabus)
