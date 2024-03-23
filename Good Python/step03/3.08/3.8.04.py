@@ -1,0 +1,5 @@
+h = int(input())
+m = int(input())
+t = int(input())
+print((h+(m+t)//60)%24)
+print((m+t)%60)
