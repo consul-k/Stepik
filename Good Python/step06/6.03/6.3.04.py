@@ -1,0 +1,5 @@
+s = input()
+print(s[3:9])
+print(s[3:10])
+print(s[:5])
+print(s[-5:])
