@@ -22,3 +22,4 @@
 * [Основы программирования на Python](https://stepik.org/course/181075/syllabus)
 * [Кодируй и Учись: Python](https://stepik.org/course/176612/syllabus)
 * [Добрый Python](https://stepik.org/course/133387/syllabus)
+* [Введение в SQL](https://stepik.org/course/191774/syllabus)
