@@ -1,0 +1,3 @@
+SELECT *
+FROM Orders
+WHERE order_date BETWEEN '2023-01-01' AND '2023-06-30';
