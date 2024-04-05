@@ -1,0 +1,3 @@
+SELECT *
+FROM Products
+WHERE price BETWEEN 500 AND 1000;
