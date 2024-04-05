@@ -1,0 +1,3 @@
+SELECT *
+FROM Events
+WHERE start_time BETWEEN '08:00:00' AND '12:00:00';
