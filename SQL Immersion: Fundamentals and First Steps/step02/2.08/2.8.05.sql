@@ -1,0 +1,3 @@
+SELECT *
+FROM Transactions
+WHERE amount BETWEEN 100.50 AND 500.75;
