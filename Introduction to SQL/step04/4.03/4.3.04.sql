@@ -1,0 +1,3 @@
+SELECT *
+FROM doctors
+LIMIT 2;
