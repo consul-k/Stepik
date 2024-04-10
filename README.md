@@ -24,4 +24,3 @@
 * [Добрый Python](https://stepik.org/course/133387/syllabus)
 * [Введение в SQL](https://stepik.org/course/191774/syllabus)
 * [Погружение в SQL: Основы и первые шаги](https://stepik.org/course/187818/syllabus)
-* [Введение в SQL](https://stepik.org/course/191774/syllabus)
