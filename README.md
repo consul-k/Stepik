@@ -25,3 +25,4 @@
 * [Введение в SQL](https://stepik.org/course/191774/syllabus)
 * [Погружение в SQL: Основы и первые шаги](https://stepik.org/course/187818/syllabus)
 * [Интерактивный тренажер по SQL](https://stepik.org/course/63054/syllabus)
+* [Python от Python_Samurai: часть 1](https://stepik.org/course/186684/syllabus)
