@@ -27,3 +27,4 @@
 * [Интерактивный тренажер по SQL](https://stepik.org/course/63054/syllabus)
 * [Python от Python_Samurai: часть 1](https://stepik.org/course/186684/syllabus)
 * [Python от Python_Samurai: часть 2](https://stepik.org/course/189107/syllabus)
+* [Практикум по математике и Python](https://stepik.org/course/3356/syllabus)
