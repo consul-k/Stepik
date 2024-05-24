@@ -1,0 +1,22 @@
+*{
+  margin:0;
+  padding:0;
+}
+.container{
+  background: url("https://images.unsplash.com/photo-1637085046560-43cc153c86e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80");
+  width: 300px;
+  height: 300px;
+  background-position: 40% 10%;
+}
+#title{
+  padding-top: 125px;
+  color: #e3d1b8;
+  font-size: 40px;
+  text-align: center;
+}
+p {
+  padding-top: 80px;
+  color: #110301;
+  font-size: 14px;
+  text-align: center;
+}
