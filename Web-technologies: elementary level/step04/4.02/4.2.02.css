@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Roboto;
+    background: #fffded;
+}
+.header-title{
+    width: 1440px;
+    height: 155px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #4E3835;
+}
+.title {
+    width: 211px;
+height: 56px;
+top: 49px;
+left: 614px;
+gap: 0px;
+opacity: 0px;
+font-family: Roboto;
+font-size: 48px;
+font-weight: 700;
+line-height: 56.25px;
+text-align: center;
+color: #E6D5B9;
+}
+
+.header-image {
+   background: url("https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80");
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1164px;
+height: 777px;
+}
+.join {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #4E3835;
+}
+.join-title{
+    margin-bottom: 34px;
+font-family: Roboto;
+font-size: 36px;
+font-weight: 700;
+line-height: 42.19px;
+text-align: center;
+color: #E6D5B9;
+}
+.join-text{
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28.13px;
+    text-align: center;
+    color:#ffffff;
+}
+.email{
+    line-height: 28.13px;
+    text-align: center;
+    color: #E6D5B9;
+    text-decoration: none;
+}
