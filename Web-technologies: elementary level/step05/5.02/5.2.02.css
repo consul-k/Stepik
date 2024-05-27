@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    background-color: #15638F;
+ 
+}
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  width: 200px;
+  border-radius: 10px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 15.59px 19px 17px 16px;
+}
+
+.card__title {
+  margin-bottom: 15.21px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.card__text {
+  margin-bottom: 15.11px;
+  font-size: 10px;
+  font-weight: 300;
+  line-height: 14px;
+  text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.card__btn {
+  width: 98px;
+  height: 27px;
+  padding: 5px 10px;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 14px;
+  border: 3px solid #2797b2;
+  border-radius: 50px;
+  color: #fff;
+  background: #2797b2;
+  outline: none;
+  transition: all 0.5s;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.card__buttonfx:before,
+.card__buttonfx:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  background: #fff;
+  z-index: -1;
+  transform: translate3D(0, -100%, 0);
+  transition: all 0.5s;
+}
+
+.card__buttonfx:before {
+  z-index: -2;
+  transform: translate3D(0, 0, 0);
+}
+
+.card__buttonfx:hover {
+  color: #2797b2;
+}
+
+.card__buttonfx:hover:after {
+  transform: translate3D(0, 0, 0);
+  transition: all 0.5s;
+}
+
+.card__curtainup {
+  transform-style: preserve-3d;
+}
+
+.card__curtainup:before,
+.card__curtainup:after {
+  transform-origin: center center;
+  transform: scale(1, 0);
+}
+
+.card__curtainup:hover:before,
+.card__curtainup:hover:after {
+  transform: scale(1);
+}
