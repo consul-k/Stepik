@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    font-family: 'Exo 2', sans-serif;
+    height: 100%;
+}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+.main {
+	flex: 1 0 auto;
+}
+.footer {
+     flex: 0 0 auto;  
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  background: #05a88d;
+  max-width: 1440px;
+  max-height: 260px;
+  padding-top: 40px;
+  padding-right: 28px;
+  padding-left: 40px;
+  color: #fff;
+}
+
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #fff;
+}
+
+.footer__left {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #f1e67d;
+  text-decoration: none;
+}
+
+.text {
+  width: 437px;
+  height: 46px;
+  margin-bottom: 28px;
+  margin-top: 22px;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.footer__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 18px;
+}
+
+.contact {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.phone {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #f1e67d;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.address {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.footer__bottom {
+  display: flex;
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
