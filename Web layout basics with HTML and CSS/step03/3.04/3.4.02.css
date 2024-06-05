@@ -1,0 +1,9 @@
+body {
+  background: DarkSlateBlue;
+}
+.text {
+  color: SandyBrown;
+  text-align: center; 
+  text-shadow: -20px 0px 30px Goldenrod, 20px 0px 30px Goldenrod;
+  font-size: 34px;
+}
