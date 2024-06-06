@@ -1,0 +1,21 @@
+nav {
+  text-align: center;
+}
+ul {
+  list-style-type: none;
+  }
+li {
+  display: inline-block;
+  background-color: #dd9;
+  padding: 10px;
+  color: maroon;
+  }
+.first {
+  color:#52d;
+}
+.second {
+  color:#952;
+}
+.third {
+  color:#39a;
+}
