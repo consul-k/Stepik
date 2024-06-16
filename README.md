@@ -31,3 +31,4 @@
 * [Web-технологии: начальный уровень](https://stepik.org/course/82108/syllabus)
 * [Основы веб-верстки с HTML и CSS](https://stepik.org/course/129827/syllabus)
 * [Ruby - первое знакомство](https://stepik.org/course/87996/syllabus)
+* [Go (Golang) - первое знакомство](https://stepik.org/course/100208/syllabus)
