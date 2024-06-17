@@ -1,0 +1,3 @@
+func star() {
+    fmt.Println("**********")
+}
