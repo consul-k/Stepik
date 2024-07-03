@@ -1,0 +1,2 @@
+SELECT CustomerName
+FROM Customers;
