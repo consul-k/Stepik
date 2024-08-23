@@ -1,5 +1,6 @@
-a = input().lower()
-print(f'Аденин: {a.count("а")}')
-print(f'Гуанин: {a.count("г")}')
-print(f'Цитозин: {a.count("ц")}')
-print(f'Тимин: {a.count("т")}')
+res = []
+number = int(input())
+while number != 0:
+    res.append(number)
+    number = int(input())
+print(max(res))
