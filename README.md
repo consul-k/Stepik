@@ -37,3 +37,4 @@
 * [Основы языка программирования Python 2023-24](https://stepik.org/course/183632/syllabus)
 * [Python summer 24](https://stepik.org/course/207720/syllabus)
 * [Lad-academy__Python](https://stepik.org/course/183411/syllabus)
+* [Python. Часть 1](https://stepik.org/course/211376/syllabus)
