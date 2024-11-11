@@ -41,3 +41,4 @@
 * [Python. Часть 2](https://stepik.org/course/211817/syllabus)
 * [Python. Часть 3](https://stepik.org/course/211999/syllabus)
 * [Python. Часть 4](https://stepik.org/course/213611/syllabus)
+* [Python OOP от Python_Samurai](https://stepik.org/course/212815/syllabus)
