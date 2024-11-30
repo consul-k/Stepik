@@ -44,3 +44,4 @@
 * [Python OOP от Python_Samurai](https://stepik.org/course/212815/syllabus)
 * [Задачи на Python](https://stepik.org/course/210064/syllabus)
 * [задачи на python](https://stepik.org/course/184641/syllabus)
+* [Программирование: Python](https://stepik.org/course/102141/syllabus)
