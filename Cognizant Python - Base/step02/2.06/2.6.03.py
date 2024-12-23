@@ -1,0 +1,7 @@
+print(f'Имя: {result[0]}')
+print(f'Предмет: {result[1]}')
+print(f'Количество 1: {result.count(1)}')
+print(f'Количество 2: {result.count(2)}')
+print(f'Количество 3: {result.count(3)}')
+print(f'Количество 4: {result.count(4)}')
+print(f'Количество 5: {result.count(5)}')
