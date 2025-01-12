@@ -1,0 +1,5 @@
+a = set(input().split())
+b = set(input().split())
+always = set(input().split())
+print(f'Склад 1: {list(sorted(always.difference(a)))}')
+print(f'Склад 2: {list(sorted(always.difference(b)))}')
