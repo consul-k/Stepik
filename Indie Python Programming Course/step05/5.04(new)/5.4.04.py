@@ -1,9 +1,5 @@
-def sum_numbers(data):
-    total = 0
-    for item in data:
-        if isinstance(item, (int, float)):
-            total += item
-    return total
-
-result = sum_numbers(data)
-print(result)
+s = []
+for i in data:
+    if type(i) == int or type(i) == float:
+        s.append(i)
+print(sum(s))
