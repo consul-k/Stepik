@@ -46,3 +46,4 @@
 * [задачи на python](https://stepik.org/course/184641/syllabus)
 * [Программирование: Python](https://stepik.org/course/102141/syllabus)
 * [Осознанный Python — База](https://stepik.org/course/180964/syllabus)
+* [Функциональное программирование на Python](https://stepik.org/course/195619)
