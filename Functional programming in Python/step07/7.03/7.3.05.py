@@ -1,5 +1,4 @@
-def get_arith_progression(a1, d, n):
+def get_arith_progression(n):
     if n == 1:
-        return a1
-    else:
-        return get_arith_progression(a1, d, n - 1) + d
+        return 1
+    return get_arith_progression(n - 1) + 7
