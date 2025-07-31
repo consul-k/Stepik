@@ -48,3 +48,4 @@
 * [Осознанный Python — База](https://stepik.org/course/180964/syllabus)
 * [Функциональное программирование на Python](https://stepik.org/course/195619)
 * [Python Advanced: Продвинутый курс для начинающих](https://stepik.org/course/225142/syllabus)
+* [Python | Вторая ступень | Продвинутые концепции](https://stepik.org/course/230395/syllabus)
