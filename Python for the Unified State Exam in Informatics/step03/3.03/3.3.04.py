@@ -1,0 +1,5 @@
+x = int(input())
+y = int(input())
+z = int(input())
+f = (x**2 + 2 * y  - 3 * z)/ (x * y * z)
+print(f)
