@@ -51,3 +51,4 @@
 * [Python | Вторая ступень | Продвинутые концепции](https://stepik.org/course/230395/syllabus)
 * [Курс по backend разработке на Python](https://stepik.org/course/138258/syllabus)
 * [Python для ЕГЭ по Информатике](https://stepik.org/course/207789/syllabus)
+* [PROкод: продвинутый курс по Python](https://stepik.org/course/225142/syllabus)
