@@ -1,0 +1,10 @@
+bandits = {"Джек": "+7", "Виктор": "+6", "Артур": "+5"}
+
+a = input()
+if a in bandits:
+    print(f'Код {a}: {bandits[a]}')
+else:
+    print(f'{a} не найден, введите новый код:')
+    n = input()
+    bandits[a] = n
+    print(f'{a} добавлен с кодом {n}.')
